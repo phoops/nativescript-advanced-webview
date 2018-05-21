@@ -17,7 +17,7 @@ export function init() {
   );
 }
 
-export function openAdvancedUrl(options: AdvancedWebViewOptions): void {
+export function openAdvancedUrl(options: AdvancedWebViewOptions): any {
   if (!options.url) {
     throw new Error("No url set in the Advanced WebView Options object.");
   }
@@ -70,6 +70,7 @@ export function openAdvancedUrl(options: AdvancedWebViewOptions): void {
     intentBuilder.enableUrlBarHiding(); /// Enables the url bar to hide as the user scrolls down on the page.
   }
   wv.loadUrl(options.url);
+  return wv;
 }
 
 export interface AdvancedWebViewOptions {

@@ -44,7 +44,7 @@ class SFSafariViewControllerDelegateImpl extends NSObject
 
 export function init() {}
 
-export function openAdvancedUrl(options: AdvancedWebViewOptions): void {
+export function openAdvancedUrl(options: AdvancedWebViewOptions): any {
   if (!options.url) {
     throw new Error("No url set in the Advanced WebView Options object.");
   }
@@ -75,6 +75,8 @@ export function openAdvancedUrl(options: AdvancedWebViewOptions): void {
     animated,
     completionHandler
   );
+
+  return sfc;
 }
 
 export interface AdvancedWebViewOptions {
