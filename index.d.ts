@@ -7,6 +7,12 @@ export function openAdvancedUrl(options: AdvancedWebViewOptions): void;
 
 export function init(): void;
 
+export function ios11(
+  options: AdvancedWebViewOptions,
+  callbackUrlScheme: string,
+  callbackFunction
+): any;
+
 export interface AdvancedWebViewOptions {
   /**
    * The url of the site to open.

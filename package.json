@@ -1,6 +1,6 @@
 {
   "name": "nativescript-advanced-webview",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "An advanced webview using Chrome CustomTabs on Android and SFSafariViewController on iOS.",
   "main": "advanced-webview",
   "typings": "index.d.ts",
@@ -10,7 +10,7 @@
       "ios": "2.3.0"
     },
     "tns-ios": {
-      "version": "2.2.1"
+      "version": "4.1.1"
     }
   },
   "repository": {
@@ -87,5 +87,6 @@
     "tns-core-modules": "^3.0.1",
     "tns-platform-declarations": "^3.0.1",
     "typescript": "~2.3.0"
-  }
+  },
+  "dependencies": {}
 }

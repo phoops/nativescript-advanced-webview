@@ -73,6 +73,14 @@ export function openAdvancedUrl(options: AdvancedWebViewOptions): any {
   return wv;
 }
 
+export function ios11(
+  options: AdvancedWebViewOptions,
+  callbackUrlScheme: string,
+  callbackFunction
+): any {
+  return "";
+}
+
 export interface AdvancedWebViewOptions {
   url: string;
   toolbarColor?: string;
