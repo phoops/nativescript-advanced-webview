@@ -116,6 +116,7 @@ export function ios11(
   );
   console.log("Session start");
   let res: boolean = authSession.start();
+  console.log("Session start return value: " + res);
 }
 
 export interface AdvancedWebViewOptions {
