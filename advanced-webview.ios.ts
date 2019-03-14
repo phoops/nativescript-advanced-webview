@@ -108,7 +108,7 @@ export function ios11(
   }
 
   //Initialize auth session
-  const authSession: SFAuthenticationSession = SFAuthenticationSession.alloc();
+  const authSession: ASWebAuthenticationSession = ASWebAuthenticationSession.alloc();
   authSession.initWithURLCallbackURLSchemeCompletionHandler(
     authURL,
     callbackUrlScheme,
