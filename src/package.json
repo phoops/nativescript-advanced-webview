@@ -1,6 +1,6 @@
 {
 	"name": "nativescript-advanced-webview",
-	"version": "3.0.1",
+	"version": "3.0.1-phoops1",
 	"description": "An advanced webview using Chrome CustomTabs on Android and SFSafariViewController on iOS.",
 	"main": "advanced-webview",
 	"typings": "index.d.ts",
@@ -95,10 +95,12 @@
 		"husky": "^0.14.3",
 		"lint-staged": "^7.2.0",
 		"prettier": "^1.13.7",
-		"tns-core-modules": "^4.0.0",
-		"tns-platform-declarations": "^4.1.0",
+		"tns-core-modules": "^5.2.0",
 		"rimraf": "^2.6.2",
 		"tslint": "~5.9.1",
 		"typescript": "^2.8.1"
+	},
+	"dependencies": {
+		"tns-platform-declarations": "^5.2.0"
 	}
 }

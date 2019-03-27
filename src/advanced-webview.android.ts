@@ -13,7 +13,7 @@ export function init() {
 	co.fitcom.fancywebview.AdvancedWebView.init(utils.ad.getApplicationContext(), true);
 }
 
-export function openAdvancedUrl(options: AdvancedWebViewOptions): void {
+export function openAdvancedUrl(options: AdvancedWebViewOptions): any {
 	if (!options.url) {
 		throw new Error('No url set in the Advanced WebView Options object.');
 	}
@@ -33,9 +33,9 @@ export function openAdvancedUrl(options: AdvancedWebViewOptions): void {
 	let activity = app.android.startActivity || app.android.foregroundActivity;
 	let client;
 	const i = new co.fitcom.fancywebview.AdvancedWebViewListener({
-		onCustomTabsServiceConnected(componentName: android.content.ComponentName, client: any) {},
-		onServiceDisconnected(componentName: android.content.ComponentName) {},
-		onNavigationEvent: function(navigationEvent: number, extras: android.os.Bundle) {
+		onCustomTabsServiceConnected(componentName: android.content.ComponentName, client: any) { },
+		onServiceDisconnected(componentName: android.content.ComponentName) { },
+		onNavigationEvent: function (navigationEvent: number, extras: android.os.Bundle) {
 			switch (navigationEvent) {
 				case 6:
 					if (options.isClosed && typeof options.isClosed === 'function') {
@@ -60,6 +60,15 @@ export function openAdvancedUrl(options: AdvancedWebViewOptions): void {
 		intentBuilder.enableUrlBarHiding(); /// Enables the url bar to hide as the user scrolls down on the page.
 	}
 	wv.loadUrl(options.url);
+	return wv;
+}
+
+export function ios11(
+	options: AdvancedWebViewOptions,
+	callbackUrlScheme: string,
+	callbackFunction
+): any {
+	return "";
 }
 
 export interface AdvancedWebViewOptions {
