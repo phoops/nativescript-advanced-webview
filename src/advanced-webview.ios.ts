@@ -2,11 +2,10 @@
  * (c) 2016, Brad Martin.
  * Licensed under the MIT license.
  *
- * Version 2.0.4                                           bradwaynemartin@gmail.com
+ * Version 3.0.0                                          bradwaynemartin@gmail.com
  **********************************************************************************/
 
 import { Color } from 'tns-core-modules/color';
-import * as utils from 'tns-core-modules/utils/utils';
 
 class SFSafariViewControllerDelegateImpl extends NSObject implements SFSafariViewControllerDelegate {
 	public static ObjCProtocols = [SFSafariViewControllerDelegate];
@@ -42,7 +41,7 @@ export function openAdvancedUrl(options: AdvancedWebViewOptions): any {
 		throw new Error('No url set in the Advanced WebView Options object.');
 	}
 
-	let sfc = SFSafariViewController.alloc().initWithURL(NSURL.URLWithString(options.url));
+	const sfc = SFSafariViewController.alloc().initWithURL(NSURL.URLWithString(options.url));
 
 	if (options.toolbarColor) {
 		sfc.preferredBarTintColor = new Color(options.toolbarColor).ios;
@@ -54,7 +53,7 @@ export function openAdvancedUrl(options: AdvancedWebViewOptions): any {
 
 	sfc.delegate = SFSafariViewControllerDelegateImpl.initWithOwnerCallback(new WeakRef({}), options.isClosed);
 
-	let app = utils.ios.getter(UIApplication, UIApplication.sharedApplication);
+	const app = UIApplication.sharedApplication;
 
 	const animated = true;
 	const completionHandler = null;
